@@ -11,5 +11,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  }
+  },
+  "author": "Simon Ciavarro",
+  "keywords": ["freeCodeCamp", "nodejs", "second project"],
+  "license": "MIT"
 }
