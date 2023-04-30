@@ -1,6 +1,11 @@
 let express = require('express'); // importing the express module.
 let app = express();
-console.log("Hello World")
+
+// Without using arrow notation or async, below:
+app.get('/', function (req, res) {
+    console.log("Hello World")
+    
+})
 
 
 
