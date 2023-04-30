@@ -3,8 +3,8 @@ let app = express();
 
 // Without using arrow notation or async, below:
 app.get('/', function (req, res) {
-    console.log("Hello World")
-    
+    console.log("Hello Express")
+    res.sendFile(__dirname + '/views/index.html')   
 })
 
 
