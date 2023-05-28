@@ -17,13 +17,20 @@ app.listen(3000, () => {
 });
 
 app.get('/json', (req, res) => {
-    console.log('success')
     if (process.env.MESSAGE_STYLE == 'uppercase') {
         res.json({ 'message': 'HELLO JSON' })
     } else {
         res.json({ 'message': 'Hello json' })
     }
 });
+
+app.get('/now', (req, res, next) => {
+    req.time = new Date().toString()
+    next()
+}, (req, res) => {
+    res.json({ time: req.time })
+    console.log('success')
+})
 
 
 
