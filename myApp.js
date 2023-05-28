@@ -15,12 +15,17 @@ app.listen(3000, () => {
 });
 
 app.get('/json', (req, res) => {
+
+    console.log('success')
+    /*
     if (process.env.MESSAGE_STYLE == 'uppercase') {
         res.json({ 'message': 'HELLO JSON' })
     } else {
         res.json({ 'message': 'Hello json' })
     }
-})
+    */
+    res.sendFile(__dirname + '/views/index.html')
+});
 
 
 
