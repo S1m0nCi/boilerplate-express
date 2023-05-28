@@ -1,8 +1,10 @@
 const express = require('express'); // importing the express module.
 const app = express();
+const logger = require('logger')
 require('dotenv').config()
 
 app.use('/public', express.static(__dirname + '/public'));
+app.use(logger.logger)
 
 // Without using arrow notation or async, below:
 app.get('/', function (req, res) {
