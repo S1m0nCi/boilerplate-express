@@ -1,5 +1,6 @@
 const express = require('express'); // importing the express module.
 const app = express();
+require('dotenv').config()
 
 app.use('/public', express.static(__dirname + '/public'));
 
@@ -13,21 +14,13 @@ app.listen(3000, () => {
     console.log('App listening on port 3000!');
 });
 
-/*
 app.get('/json', (req, res) => {
-    res.json({'message': 'Hello json'})
+    if (process.env.MESSAGE_STYLE == 'uppercase') {
+        res.json({ 'message': 'HELLO JSON' })
+    } else {
+        res.json({ 'message': 'Hello json' })
+    }
 })
-*/
-
-
-
-
-
-
-
-
-
-
 
 
 
