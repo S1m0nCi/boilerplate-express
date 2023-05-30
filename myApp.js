@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config()
 
 app.use('/public', express.static(__dirname + '/public'));
-app.post(bodyParser.urlencoded({ extended: false })) // used for all post requests.
+app.use(bodyParser.urlencoded({ extended: false })) // used for all post requests.
 app.use(logger);
 
 // Without using arrow notation or async, below:
@@ -43,7 +43,7 @@ app.route('/name')
     res.json({ name: req.query.first + ' ' + req.query.last })
 })
 .post((req, res) => {
-
+    res.json({ name: req.body.first + ' ' + req.body.last })
 })
 
 
