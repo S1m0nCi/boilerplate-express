@@ -1,10 +1,12 @@
 const express = require('express'); // importing the express module.
 const app = express(); // creating an instance of express 
 const { logger } = require('./logger')
+const bodyParser = require('body-parser')
 require('dotenv').config()
 
 app.use('/public', express.static(__dirname + '/public'));
-app.use(logger)
+app.post(bodyParser.urlencoded({ extended: false })) // used for all post requests.
+app.use(logger);
 
 // Without using arrow notation or async, below:
 app.get('/', function (req, res) {
